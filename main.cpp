@@ -1,17 +1,27 @@
 // Complete the following program.
 #include <iostream>
 #include <iomanip>
-
 using namespace std;
 
 int main()
 {
-    // TODO: declare variable n for the exponent input
+    int n;
+    cin >> n;
 
-    // TODO: read n from standard input
+    double result = 1.0;
 
-    // TODO: compute 2 to the power of n using a loop (no cmath pow)
-    // For positive n: multiply result by 2, n times
-    // For negative n: divide result by 2, |n| times
+    if (n >= 0) {
+        for (int i = 0; i < n; i++) {
+            result *= 2;
+        }
+    } else {
+        for (int i = 0; i < -n; i++) {
+            result /= 2;
+        }
+    }
 
+    cout << setprecision(5) << fixed;
+    cout << "2 to Power " << n << " is " << result << endl;
+
+    return 0;
 }
